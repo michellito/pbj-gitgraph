@@ -5,11 +5,11 @@ const Graph = () => {
 
   let options = {
     template: templateExtend("metro", {
-      colors: ["#1c4587", "#cc4125", "#b45f06"],
+      colors: ["#1c4587", "#e69138", "#cc4125", "green"],
       commit: {
         message: {
           displayAuthor: true,
-          displayHash: false
+          displayHash: true
         }
       }
     })
@@ -30,23 +30,48 @@ const Graph = () => {
             subject: "Add title and ingredients list",
             author: michelle
           });
-          // main.commit({
-          //   subject: "Add step by step instructions",
-          //   author: michelle
-          // });
+          main.commit({
+            subject: "Add step by step instructions",
+            author: michelle
+          });
 
           // add crunchy branch
-          // const crunchy = gitgraph.branch('make-it-crunchy');
-          // crunchy.commit({
-          //   subject: "Add potato chips",
-          //   author: michelle
-          // });
-          // crunchy.commit({
-          //   subject: "Add crunchy peanut butter",
-          //   author: michelle
-          // });
+          const crunchy = gitgraph.branch('make-it-crunchy');
+          crunchy.commit({
+            subject: "Add potato chips",
+            author: michelle
+          });
+          crunchy.commit({
+            subject: "Swap crunchy pb",
+            author: michelle
+          });
+          crunchy.commit({
+            subject: "Revert crunchy pb",
+            author: michelle
+          });
 
-          // main.merge(crunchy);
+          main.merge(crunchy);
+
+
+          // add crunchy branch
+          const bread = main.branch('homemade-bread');
+          bread.commit({
+            subject: "Add homemade bread recipe",
+            author: michelle
+          });
+          bread.commit({
+            subject: "Adjust flour amount",
+            author: michelle
+          });
+
+          // add crunchy branch
+          const spicy = main.branch('make-it-spicy');
+          spicy.commit({
+            subject: "Add green chile",
+            author: mona
+          });
+
+
 
         }}
       </Gitgraph>
