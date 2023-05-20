@@ -53,7 +53,7 @@ const Graph = () => {
           main.merge(crunchy);
 
 
-          // add crunchy branch
+          // add homemade bread branch
           const bread = main.branch('homemade-bread');
           bread.commit({
             subject: "Add homemade bread recipe",
@@ -64,7 +64,7 @@ const Graph = () => {
             author: michelle
           });
 
-          // add crunchy branch
+          // add spicy branch by collaborator
           const spicy = main.branch('make-it-spicy');
           spicy.commit({
             subject: "Add green chile",
